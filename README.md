@@ -1,62 +1,66 @@
-# SpendWise
 
-SpendWise is a simple personal finance dashboard that helps users track their spending and manage expenses.
+# 💰 SpendWise – Personal Budget Tracker
 
-## Improvements Made This Week
+SpendWise is a simple and user-friendly personal finance management web application designed to help users manage their money, monitor expenses, track income, and plan monthly budgets.
 
-This week, SpendWise was made interactive using JavaScript. Users can now enter an expense name, amount, and category and add the expense to the page.
+## 🚀 Features
 
-The project also includes input validation and conditional logic to make the application more useful.
+- **Dashboard:** View your total income, expenses, and remaining balance.
+- **Monthly Budget:** Set and manage your monthly spending limit.
+- **Budget Progress:** Monitor spending through a visual progress bar.
+- **Income Tracking:** Record and manage your income.
+- **Expense Tracking:** Record daily expenses by category.
+- **Transaction History:** View and delete recorded transactions.
+- **Monthly Reports:** View income, expenses, savings, and transaction counts.
+- **Local Storage:** Automatically saves financial records in your browser.
+- **Responsive Design:** Works on desktop and mobile devices.
 
-## JavaScript Concepts Used
+## 🛠️ Technologies Used
 
-### Variables
+- HTML5
+- CSS3
+- JavaScript
+- Browser Local Storage
 
-Variables are used to store information such as the budget, expenses, expense names, amounts, and categories.
+## 📁 Project Structure
 
-### User Input
+```text
+SpendWise/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
 
-The expense form collects information from the user:
+## ⚙️ How to Run the Project
 
-* Expense name
-* Amount
-* Category
+1. Download or clone this repository.
+2. Open the SpendWise project folder.
+3. Open `index.html` in your web browser.
+4. Set your monthly budget.
+5. Start recording your income and expenses.
 
-### Calculations
+## 💵 Currency
 
-JavaScript calculates values such as total expenses and the remaining balance.
+The application uses Kenyan Shillings (KSh).
 
-### Functions
+## 🌐 Deployment
 
-A `calculateBalance()` function is used to calculate the remaining balance.
+SpendWise is designed for deployment using Netlify.
 
-### Conditionals
+## 🔒 Data Storage
 
-`if` and `else` statements are used to check expense amounts and validate user input.
+Financial records are stored locally in the browser using Local Storage. Data is not automatically synchronized between devices.
 
-For example:
+## 👩‍💻 Project Purpose
 
-* Expenses of KSh 1000 or more are treated as large expenses.
-* Expenses below KSh 1000 are treated as small expenses.
-* Amounts of 0 or less are rejected.
+SpendWise was developed to demonstrate practical web development skills and provide a simple tool for personal financial management.
 
-### Dynamic Updates
+## 📄 License
 
-JavaScript creates and displays a new expense on the page after the user submits the form.
+This project is available for educational and personal use.
 
-## Files
+---
 
-* `index.html` — Structure of the SpendWise dashboard
-* `style.css` — Styling and layout
-* `script.js` — JavaScript functionality
-* `README.md` — Project documentation
-
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript
-
-## Author
-
-Raha
+**SpendWise – Manage Your Money Wisely!**

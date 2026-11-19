@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>SpendWise | Personal Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand"><span class="brand-icon">S</span> SpendWise</a>
+    <div class="header-right">
+      <span id="today"></span>
+      <span class="user-avatar">SW</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">PERSONAL FINANCE MANAGER</p>
+        <h1>Welcome to SpendWise 👋</h1>
+        <p>Manage your money. Track your spending. Build better habits.</p>
+      </div>
+      <div class="month-picker">
+        <label for="monthFilter">Select month</label>
+        <input type="month" id="monthFilter">
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card balance-card">
+        <div class="card-heading"><span>Remaining Balance</span><span>💰</span></div>
+        <h2 id="balance">KSh 0</h2>
+        <small>Income minus expenses</small>
+      </article>
+      <article class="summary-card">
+        <div class="card-heading"><span>Total Income</span><span>↗</span></div>
+        <h2 class="income-text" id="income">KSh 0</h2>
+        <small>This month</small>
+      </article>
+      <article class="summary-card">
+        <div class="card-heading"><span>Total Expenses</span><span>↘</span></div>
+        <h2 class="expense-text" id="expenses">KSh 0</h2>
+        <small>This month</small>
+      </article>
+    </section>
+
+    <section class="panel budget-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR FINANCIAL PLAN</p>
+          <h2>Monthly Budget</h2>
+        </div>
+        <span class="budget-icon">🎯</span>
+      </div>
+
+      <form id="budgetForm" class="budget-form">
+        <div class="field">
+          <label for="budgetAmount">Set monthly spending limit (KSh)</label>
+          <input type="number" id="budgetAmount" min="0" step="0.01" placeholder="e.g. 20000" required>
+        </div>
+        <button type="submit" class="primary-btn">Save Budget</button>
+      </form>
+
+      <div class="budget-details">
+        <div>
+          <span>Budget</span>
+          <strong id="budgetTotal">KSh 0</strong>
+        </div>
+        <div>
+          <span>Spent</span>
+          <strong id="budgetSpent" class="expense-text">KSh 0</strong>
+        </div>
+        <div>
+          <span>Remaining</span>
+          <strong id="budgetRemaining" class="income-text">KSh 0</strong>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div id="budgetProgress" class="progress-fill"></div>
+      </div>
+      <div class="progress-caption">
+        <span id="budgetMessage">Set a budget to get started.</span>
+        <strong id="budgetPercentage">0%</strong>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RECORD YOUR MONEY</p>
+            <h2>Add Transaction</h2>
+          </div>
+          <span class="section-icon">＋</span>
+        </div>
+
+        <form id="transactionForm">
+          <div class="field">
+            <label for="description">Description</label>
+            <input type="text" id="description" placeholder="e.g. Shopping, Salary" maxlength="60" required>
+          </div>
+
+          <div class="field">
+            <label for="amount">Amount (KSh)</label>
+            <input type="number" id="amount" min="0.01" step="0.01" placeholder="Enter amount" required>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="type">Transaction type</label>
+              <select id="type">
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category">
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Rent</option>
+                <option>Education</option>
+                <option>Health</option>
+                <option>Salary</option>
+                <option>Business</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="transactionDate">Date</label>
+            <input type="date" id="transactionDate" required>
+          </div>
+
+          <button type="submit" class="primary-btn full-btn">+ Add Transaction</button>
+        </form>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </article>
+
+      <article class="panel transactions-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR MONEY ACTIVITY</p>
+            <h2>Transaction History</h2>
+          </div>
+          <span class="section-icon">📋</span>
+        </div>
+
+        <div class="transaction-list" id="transactionList">
+          <p class="empty-state">No transactions yet. Add your first transaction!</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel report-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FINANCIAL OVERVIEW</p>
+          <h2>Monthly Report</h2>
+        </div>
+        <span class="section-icon">📊</span>
+      </div>
+      <div class="report-grid">
+        <div class="report-item">
+          <span>Income</span>
+          <strong id="reportIncome" class="income-text">KSh 0</strong>
+        </div>
+        <div class="report-item">
+          <span>Expenses</span>
+          <strong id="reportExpenses" class="expense-text">KSh 0</strong>
+        </div>
+        <div class="report-item">
+          <span>Net Savings</span>
+          <strong id="reportSavings">KSh 0</strong>
+        </div>
+        <div class="report-item">
+          <span>Transactions</span>
+          <strong id="reportCount">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> SpendWise. Manage your money wisely.</p>
+      <p>Your financial data is saved locally in your browser.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
